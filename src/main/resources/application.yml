@@ -1,0 +1,24 @@
+Spring:
+  datasource:
+    url: jbdc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTime
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+
+## Specify DBMS
+  jpa:
+    database: MYSQL
+    show-sql: false
+# Hibernate DDL Auto
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySAL5Dialect
+
+
+server:
+  port: 8081
+
+
+
