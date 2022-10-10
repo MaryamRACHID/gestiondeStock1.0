@@ -43,6 +43,9 @@ public class Entreprise extends AbstractEntity {
     @Column(name = "tele")
     private String tele;
 
+    @Column(name = "website")
+    private String webSite;
+
     @OneToMany(mappedBy = "entreprise")
     private List<Utilisateur> utilisateurs;
 

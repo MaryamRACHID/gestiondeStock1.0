@@ -49,4 +49,6 @@ public class Utilisateur extends AbstractEntity{
 
     @OneToMany(mappedBy = "utilisateur")
     private List<Roles> roles;
+
+
 }

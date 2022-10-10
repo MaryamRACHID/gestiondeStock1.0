@@ -12,8 +12,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -31,4 +33,7 @@ public class Vente extends AbstractEntity{
 
     @Column(name = "commentaire")
     private String commentaire;
+
+    @OneToMany(mappedBy = "vente")
+    private List<LigneVente> venteList;
 }

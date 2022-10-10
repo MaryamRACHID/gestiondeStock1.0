@@ -5,6 +5,7 @@
 
 package com.app.gestiondestock.model;
 
+import com.app.gestiondestock.dto.LigneCommandeClientDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,11 +27,14 @@ public class Article extends AbstractEntity {
     @Column(name = "codearticle")
     private String codeArticle;
 
-    @Column(name = "destination")
-    private String destination;
+    @Column(name = "designation")
+    private String designation;
 
     @Column(name = "prixunitaireht")
     private BigDecimal prixUnitaireHt;
+
+    @Column(name = "tauxTva")
+    private BigDecimal tauxTva;
 
     @Column(name = "prixunitairettc")
     private BigDecimal prixUnitaireTtc;
@@ -39,10 +43,24 @@ public class Article extends AbstractEntity {
     private String photo;
 
     @ManyToOne
-    @JoinColumn(name = "idcategorie")
-    private Categorie categorie;
+    @JoinColumn(name = "idcategory")
+    private Category category;
+
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
 
     @OneToMany(mappedBy = "article")
-    private List<MvtStock> mvtsStock;
+    private List<LigneVente> ligneVentes;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeClient> ligneCommandeClients;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
+    @OneToMany(mappedBy = "article")
+    private List<MvtStock> mvtStocks;
+
+
 
 }

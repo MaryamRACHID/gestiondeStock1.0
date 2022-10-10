@@ -1,9 +1,9 @@
 Spring:
   datasource:
-    url: jbdc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTime
+    url: jdbc:mysql://localhost:3306/gestionstock?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTime
     username: root
     password:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 ## Specify DBMS
   jpa:
@@ -14,11 +14,11 @@ Spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySAL5Dialect
+        dialect: org.hibernate.dialect.MySQL5Dialect
 
 
 server:
-  port: 8081
+  port: 8080
 
 
 

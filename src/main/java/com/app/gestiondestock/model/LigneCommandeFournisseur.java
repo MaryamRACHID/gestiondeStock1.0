@@ -11,6 +11,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -21,10 +22,16 @@ import javax.persistence.*;
 public class LigneCommandeFournisseur extends AbstractEntity {
 
     @ManyToOne
-    @JoinColumn(name = "idFournisseur")
-    private Fournisseur fournisseur;
+    @JoinColumn(name = "idarticle")
+    private Article article;
 
     @ManyToOne
     @JoinColumn(name = "idCommandeFournisseur")
     private CommandeFournisseur commandeFournisseur;
+
+    @Column(name = "quantite")
+    private BigDecimal quantite;
+
+    @Column(name = "prixunitaire")
+    private BigDecimal prixUnitaire;
 }

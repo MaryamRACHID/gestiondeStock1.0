@@ -5,6 +5,7 @@
 
 package com.app.gestiondestock.model;
 
+import com.app.gestiondestock.dto.RolesDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,4 +28,5 @@ public class Roles extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = "idutilisateur")
     private Utilisateur utilisateur;
+
 }
