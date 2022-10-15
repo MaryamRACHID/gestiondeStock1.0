@@ -5,5 +5,16 @@
 
 package com.app.gestiondestock.repositories;
 
-public class ClientRepository {
+import com.app.gestiondestock.dto.ClientDto;
+import com.app.gestiondestock.model.Client;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface ClientRepository extends JpaRepository<Client, Integer> {
+
+    Optional<Client>  findClientByMail(String mail);
+
+    Optional<Client>  findClientBytele(String tele);
+
 }

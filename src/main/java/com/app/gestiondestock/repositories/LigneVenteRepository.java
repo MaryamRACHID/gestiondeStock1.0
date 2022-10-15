@@ -5,5 +5,8 @@
 
 package com.app.gestiondestock.repositories;
 
-public class LigneVenteRepository {
+import com.app.gestiondestock.model.LigneVente;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LigneVenteRepository extends JpaRepository<LigneVente, Integer> {
 }

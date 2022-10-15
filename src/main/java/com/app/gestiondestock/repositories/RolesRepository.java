@@ -5,5 +5,8 @@
 
 package com.app.gestiondestock.repositories;
 
-public class RolesRepository {
+import com.app.gestiondestock.model.Roles;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RolesRepository extends JpaRepository<Roles, Integer> {
 }

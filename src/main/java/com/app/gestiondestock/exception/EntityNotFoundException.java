@@ -5,8 +5,11 @@
 
 package com.app.gestiondestock.exception;
 
+import lombok.Getter;
+
 public class EntityNotFoundException extends RuntimeException{
 
+    @Getter
     private ErrorCodes errorCodes;
 
     public EntityNotFoundException(String message) {

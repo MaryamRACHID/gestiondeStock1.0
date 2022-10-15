@@ -5,11 +5,16 @@
 
 package com.app.gestiondestock.exception;
 
+import lombok.Getter;
+
 import java.util.List;
 
 public class InvalidEntityException extends RuntimeException {
 
+    @Getter
     private ErrorCodes errorCodes;
+
+    @Getter
     private List<String> errors;
 
     public InvalidEntityException(String message) {

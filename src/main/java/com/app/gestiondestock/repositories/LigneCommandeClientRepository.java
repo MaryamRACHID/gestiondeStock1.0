@@ -5,5 +5,8 @@
 
 package com.app.gestiondestock.repositories;
 
-public class LigneCommandeClientRepository {
+import com.app.gestiondestock.model.LigneCommandeClient;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LigneCommandeClientRepository extends JpaRepository<LigneCommandeClient, Integer> {
 }

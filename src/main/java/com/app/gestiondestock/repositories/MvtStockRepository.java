@@ -5,5 +5,8 @@
 
 package com.app.gestiondestock.repositories;
 
-public class MvtStockRepository {
+import com.app.gestiondestock.model.MvtStock;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MvtStockRepository extends JpaRepository<MvtStock, Integer> {
 }
