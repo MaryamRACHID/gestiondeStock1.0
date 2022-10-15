@@ -1,0 +1,29 @@
+/*
+ * @author Maryam RACHID
+ * Software Engineer from the National School Of Applied Science
+ */
+
+package com.app.gestiondestock.handlers;
+
+import com.app.gestiondestock.exception.ErrorCodes;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class ErrorDto {
+
+    private Integer httpCode;
+
+    private ErrorCodes code;
+
+    private  String message;
+
+    private List<String> errors = new ArrayList<>();
+
+}

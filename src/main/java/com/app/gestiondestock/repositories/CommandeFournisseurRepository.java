@@ -5,5 +5,8 @@
 
 package com.app.gestiondestock.repositories;
 
-public class CommandeFournisseurRepository {
+import com.app.gestiondestock.model.CommandeFournisseur;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommandeFournisseurRepository extends JpaRepository<CommandeFournisseur, Integer> {
 }
