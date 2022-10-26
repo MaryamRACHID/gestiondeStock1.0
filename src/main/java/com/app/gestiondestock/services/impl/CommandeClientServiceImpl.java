@@ -27,6 +27,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -65,6 +66,7 @@ public class CommandeClientServiceImpl implements ICommandeClientService {
         }
 
         List<String> articleErrors = new ArrayList<>();
+
         if(commandeClientDto.getLigneCommandeClient() != null){
             commandeClientDto.getLigneCommandeClient().forEach(ligne -> {
                 if(ligne.getArticle() != null){
@@ -72,6 +74,8 @@ public class CommandeClientServiceImpl implements ICommandeClientService {
                     if(article.isEmpty()){
                         articleErrors.add(("L'article n'est pas trouvé; ID : "+ligne.getArticle().getId()));
                     }
+                } else{
+                    articleErrors.add("Impossi d'enregistrer une commande avec un article null");
                 }
             });
         }
@@ -96,21 +100,40 @@ public class CommandeClientServiceImpl implements ICommandeClientService {
 
     @Override
     public CommandeClientDto findById(Integer id) {
-        return null;
+        if( id == null){
+            log.error("Commande client ID is null");
+            return null;
+        }
+        return commandeClientRepository.findById(id)
+                .map(CommandeClientDto::fromEntity)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Aucune commande client n'a ete trouvé. ID : "+id,ErrorCodes.COMMANDE_CLIENT_NOT_FOUND));
     }
 
     @Override
     public CommandeClientDto findByCode(String code) {
-        return null;
+        if( code == null){
+            log.error("Commande client ID is null");
+            return null;
+        }
+        return commandeClientRepository.findByCode(code)
+                .map(CommandeClientDto::fromEntity)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Aucune commande client n'a ete trouvé. Code : "+code,ErrorCodes.COMMANDE_CLIENT_NOT_FOUND));
     }
 
     @Override
     public List<CommandeClientDto> findAll() {
-        return null;
+        return commandeClientRepository.findAll().stream()
+                .map(CommandeClientDto::fromEntity)
+                .collect(Collectors.toList());
     }
 
     @Override
     public void delete(Integer id) {
-
+        if( id == null){
+            log.error("Commande client ID is null");
+        }
+        commandeClientRepository.deleteById(id);
     }
 }
