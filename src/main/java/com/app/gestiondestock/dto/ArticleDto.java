@@ -36,16 +36,12 @@ public class ArticleDto {
 
     private Integer idEntreprise;
 
-    @JsonIgnore
     private List<LigneVente> ligneVentes;
 
-    @JsonIgnore
     private List<LigneCommandeClient> ligneCommandeClients;
 
-    @JsonIgnore
     private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
 
-    @JsonIgnore
     private List<MvtStock> mvtStocks;
 
 

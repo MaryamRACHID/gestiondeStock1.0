@@ -26,7 +26,7 @@ public class VenteDto {
     private String commentaire;
 
     @JsonIgnore
-    private List<LigneVente> venteList;
+    private List<LigneVenteDto> venteList;
 
 
     public static VenteDto fromEntity(Vente vente){

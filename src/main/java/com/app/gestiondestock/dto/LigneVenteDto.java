@@ -19,6 +19,8 @@ public class LigneVenteDto {
 
     private VenteDto vente;
 
+    private ArticleDto article;
+
     private BigDecimal quantite;
 
     private BigDecimal prixUnitaire;

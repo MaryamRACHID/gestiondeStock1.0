@@ -136,4 +136,5 @@ public class CommandeClientServiceImpl implements ICommandeClientService {
         }
         commandeClientRepository.deleteById(id);
     }
+
 }
