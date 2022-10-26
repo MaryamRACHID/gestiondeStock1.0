@@ -56,7 +56,7 @@ public class ClientServiceImpl implements IClientService {
 
         Optional<Client> client = clientRepository.findById(id);
         return Optional.of(ClientDto.fromEntity(client.get())).orElseThrow(() -> new EntityNotFoundException
-                ("Le client ayant l'ID : "+id+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUNT));
+                ("Le client ayant l'ID : "+id+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUND));
     }
 
     @Override
@@ -72,7 +72,7 @@ public class ClientServiceImpl implements IClientService {
         }
         Optional<Client> client = clientRepository.findClientByMail(mail);
         return Optional.of(ClientDto.fromEntity(client.get())).orElseThrow(() -> new EntityNotFoundException
-                ("Le client ayant l'email : "+mail+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUNT));
+                ("Le client ayant l'email : "+mail+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUND));
     }
 
     @Override
@@ -83,7 +83,7 @@ public class ClientServiceImpl implements IClientService {
         }
         Optional<Client> client = clientRepository.findClientBytele(tele);
         return Optional.of(ClientDto.fromEntity(client.get())).orElseThrow(() -> new EntityNotFoundException
-                ("Le client ayant le numéro de télèphone : "+tele+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUNT));    }
+                ("Le client ayant le numéro de télèphone : "+tele+" n'existe pas !",ErrorCodes.CLIENT_NOT_FOUND));    }
 
     @Override
     public void delete(Integer id) {

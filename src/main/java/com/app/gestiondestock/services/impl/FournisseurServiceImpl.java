@@ -50,7 +50,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
             return null;
         }
         return Optional.of(FournisseurDto.fromEntity(fournisseurRepository.findById(id).get())).orElseThrow(() -> new EntityNotFoundException
-                ("Le fournisseur ayant ID : "+id+" n'existe pas", ErrorCodes.FOURNISSEUR_NOT_FOUNT));
+                ("Le fournisseur ayant ID : "+id+" n'existe pas", ErrorCodes.FOURNISSEUR_NOT_FOUND));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
             return null;
         }
         return Optional.of(FournisseurDto.fromEntity(fournisseurRepository.findFournisseurByMail(mail).get())).orElseThrow(
-                () -> new EntityNotFoundException("", ErrorCodes.FOURNISSEUR_NOT_FOUNT));
+                () -> new EntityNotFoundException("", ErrorCodes.FOURNISSEUR_NOT_FOUND));
     }
 
     @Override
@@ -75,7 +75,7 @@ public class FournisseurServiceImpl implements IFournisseurService {
             return null;
         }
         return Optional.of(FournisseurDto.fromEntity(fournisseurRepository.findFournisseurByMail(tele).get())).orElseThrow(
-                () -> new EntityNotFoundException("", ErrorCodes.FOURNISSEUR_NOT_FOUNT));
+                () -> new EntityNotFoundException("", ErrorCodes.FOURNISSEUR_NOT_FOUND));
     }
 
     @Override

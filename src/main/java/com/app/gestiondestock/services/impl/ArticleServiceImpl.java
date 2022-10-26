@@ -53,7 +53,7 @@ public class ArticleServiceImpl implements IArticleService {
         Optional<Article> article = articleRepository.findById(id);
 
         return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(() -> new EntityNotFoundException
-                        ("Aucun article avec l'ID"+id+"n'a été trouvé", ErrorCodes.ARTICLE_NOT_FOUNT));
+                        ("Aucun article avec l'ID"+id+"n'a été trouvé", ErrorCodes.ARTICLE_NOT_FOUND));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class ArticleServiceImpl implements IArticleService {
         Optional<Article> article = articleRepository.findArticleByCodeArticle(codeArticle);
 
         return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(() -> new EntityNotFoundException
-                ("Aucun article avec l'ID"+codeArticle+"n'a été trouvé", ErrorCodes.ARTICLE_NOT_FOUNT));    }
+                ("Aucun article avec l'ID"+codeArticle+"n'a été trouvé", ErrorCodes.ARTICLE_NOT_FOUND));    }
 
     @Override
     public List<ArticleDto> findAll() {

@@ -53,7 +53,7 @@ public class UtlisateurServiceImpl implements IUtlisateurService {
 
         Optional<Utilisateur> utilisateur = utilisateurRepository.findById(id);
         return Optional.of(UtilisateurDto.fromEntity(utilisateur.get())).orElseThrow(() -> new EntityNotFoundException
-                ("L'utilisateur ayant l'ID : "+id+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUNT));
+                ("L'utilisateur ayant l'ID : "+id+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUND));
     }
 
     @Override
@@ -69,7 +69,7 @@ public class UtlisateurServiceImpl implements IUtlisateurService {
         }
         Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurByMail(mail);
         return Optional.of(UtilisateurDto.fromEntity(utilisateur.get())).orElseThrow(() -> new EntityNotFoundException
-                ("L'utilisateur ayant l'email : "+mail+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUNT));
+                ("L'utilisateur ayant l'email : "+mail+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUND));
     }
 
     @Override
@@ -80,7 +80,7 @@ public class UtlisateurServiceImpl implements IUtlisateurService {
         }
         Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurBytele(tele);
         return Optional.of(UtilisateurDto.fromEntity(utilisateur.get())).orElseThrow(() -> new EntityNotFoundException
-                ("L'utilisateur ayant le numéro de télèphone : "+tele+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUNT));    }
+                ("L'utilisateur ayant le numéro de télèphone : "+tele+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUND));    }
 
     @Override
     public void delete(Integer id) {
