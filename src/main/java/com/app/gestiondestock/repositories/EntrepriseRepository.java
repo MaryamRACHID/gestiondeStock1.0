@@ -16,7 +16,7 @@ public interface EntrepriseRepository extends JpaRepository<Entreprise, Integer>
 
     Optional<Entreprise> findEntrepriseByNom(String nom);
 
-    Optional<Entreprise> findEntrepriseByMail(String mail);
+    Optional<Entreprise> findEntrepriseByEmail(String mail);
 
     Optional<Entreprise> findEntrepriseBytele(String tele);
 

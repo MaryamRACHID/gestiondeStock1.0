@@ -18,6 +18,8 @@ public class MvtStockDto {
 
     private Integer id;
 
+    private Instant code;
+
     private Instant dateMvt;
 
     private BigDecimal quantite;

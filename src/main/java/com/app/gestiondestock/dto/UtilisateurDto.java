@@ -23,6 +23,8 @@ public class UtilisateurDto {
     private String prenom;
 
     private String email;
+    
+    private String tele;
 
     private Instant dateDeNaissance;
 

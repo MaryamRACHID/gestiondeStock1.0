@@ -67,7 +67,7 @@ public class UtlisateurServiceImpl implements IUtlisateurService {
             log.error("Ce mail : "+mail+" n'existe pas !");
             return null;
         }
-        Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurByMail(mail);
+        Optional<Utilisateur> utilisateur = utilisateurRepository.findUtilisateurByEmail(mail);
         return Optional.of(UtilisateurDto.fromEntity(utilisateur.get())).orElseThrow(() -> new EntityNotFoundException
                 ("L'utilisateur ayant l'email : "+mail+" n'existe pas !",ErrorCodes.UTILISATEUR_NOT_FOUND));
     }

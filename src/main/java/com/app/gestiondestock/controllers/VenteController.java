@@ -5,9 +5,9 @@
 
 package com.app.gestiondestock.controllers;
 
-import com.app.gestiondestock.controllers.api.ArticleAPI;
-import com.app.gestiondestock.dto.ArticleDto;
-import com.app.gestiondestock.services.IArticleService;
+import com.app.gestiondestock.controllers.api.VenteAPI;
+import com.app.gestiondestock.dto.VenteDto;
+import com.app.gestiondestock.services.IVenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,37 +15,37 @@ import java.util.List;
 
 
 @RestController
-public class VenteController implements ArticleAPI {
+public class VenteController implements VenteAPI {
 
-    private IArticleService articleService;
+    private IVenteService venteService;
 
     @Autowired
-    public VenteController(IArticleService articleService){
-        this.articleService = articleService;
+    public VenteController(IVenteService venteService){
+        this.venteService = venteService;
     }
 
     @Override
-    public ArticleDto save(ArticleDto articleDto) {
-        return articleService.save(articleDto);
+    public VenteDto save(VenteDto venteDto) {
+        return venteService.save(venteDto);
     }
 
     @Override
-    public ArticleDto findById(Integer id) {
-        return articleService.findById(id);
+    public VenteDto findById(Integer id) {
+        return venteService.findById(id);
     }
 
     @Override
-    public ArticleDto findByCodeArticle(String codeArticle) {
-        return articleService.findByCodeArticle(codeArticle);
+    public VenteDto findByCode(String code) {
+        return venteService.findByCode(code);
     }
 
     @Override
-    public List<ArticleDto> findAll() {
-        return articleService.findAll();
+    public List<VenteDto> findAll() {
+        return venteService.findAll();
     }
 
     @Override
     public void delete(Integer id) {
-        articleService.delete(id);
+        venteService.delete(id);
     }
 }

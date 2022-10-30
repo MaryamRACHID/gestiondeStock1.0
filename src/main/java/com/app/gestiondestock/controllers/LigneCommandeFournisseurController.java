@@ -6,6 +6,7 @@
 package com.app.gestiondestock.controllers;
 
 import com.app.gestiondestock.controllers.api.ArticleAPI;
+import com.app.gestiondestock.controllers.api.LigneCommandeFournisseurAPI;
 import com.app.gestiondestock.dto.ArticleDto;
 import com.app.gestiondestock.services.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,37 +16,6 @@ import java.util.List;
 
 
 @RestController
-public class LigneCommandeFournisseurController implements ArticleAPI {
+public class LigneCommandeFournisseurController implements LigneCommandeFournisseurAPI {
 
-    private IArticleService articleService;
-
-    @Autowired
-    public LigneCommandeFournisseurController(IArticleService articleService){
-        this.articleService = articleService;
-    }
-
-    @Override
-    public ArticleDto save(ArticleDto articleDto) {
-        return articleService.save(articleDto);
-    }
-
-    @Override
-    public ArticleDto findById(Integer id) {
-        return articleService.findById(id);
-    }
-
-    @Override
-    public ArticleDto findByCodeArticle(String codeArticle) {
-        return articleService.findByCodeArticle(codeArticle);
-    }
-
-    @Override
-    public List<ArticleDto> findAll() {
-        return articleService.findAll();
-    }
-
-    @Override
-    public void delete(Integer id) {
-        articleService.delete(id);
-    }
 }

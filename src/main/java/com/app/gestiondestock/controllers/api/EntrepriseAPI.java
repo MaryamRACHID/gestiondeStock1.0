@@ -28,13 +28,13 @@ public interface EntrepriseAPI {
     @GetMapping(value = APP_ROOT + "/entreprise/{tele}", produces = MediaType.APPLICATION_JSON_VALUE)
     EntrepriseDto findEntrepriseBytele(@PathVariable("tele") String codeArticle);
 
-    @GetMapping(value = APP_ROOT + "/client/{codeFiscal}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ROOT + "/entreprise/{codeFiscal}", produces = MediaType.APPLICATION_JSON_VALUE)
     EntrepriseDto findEntrepriseBycodeFiscal(@PathVariable("codeFiscal") String codeArticle);
 
-    @GetMapping(value = APP_ROOT + "/client/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = APP_ROOT + "/entreprise/all", produces = MediaType.APPLICATION_JSON_VALUE)
     List<EntrepriseDto> findAll();
 
-    @DeleteMapping(value = APP_ROOT + "/client/delete/{idclient}")
+    @DeleteMapping(value = APP_ROOT + "/entreprise/delete/{idclient}")
     void delete(@PathVariable("idclient") Integer id);
 
 }

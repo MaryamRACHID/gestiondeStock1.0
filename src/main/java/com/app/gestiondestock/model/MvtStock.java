@@ -25,6 +25,9 @@ public class MvtStock extends AbstractEntity{
     @Column(name = "datemvt")
     private Instant dateMvt;
 
+    @Column(name = "code")
+    private Instant code;
+
     @Column(name = "quantite")
     private BigDecimal quantite;
 

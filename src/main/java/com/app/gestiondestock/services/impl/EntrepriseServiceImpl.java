@@ -72,7 +72,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
             log.error("ce mail n'existe pas !");
             return null;
         }
-        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByMail(mail);
+        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByEmail(mail);
         return Optional.of(EntrepriseDto.fromEntity(entreprise.get())).orElseThrow(() -> new EntityNotFoundException
                 ("L'entreprise ayant l'email: "+mail+" n'existe pas !",ErrorCodes.ENTREPRISE_NOT_FOUND));
     }
@@ -83,7 +83,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
             log.error("Ce numéro téléphone n'existe pas !");
             return null;
         }
-        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByMail(tele);
+        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseBytele(tele);
         return Optional.of(EntrepriseDto.fromEntity(entreprise.get())).orElseThrow(() -> new EntityNotFoundException
                 ("L'entreprise ayant l'email: "+tele+" n'existe pas !",ErrorCodes.ENTREPRISE_NOT_FOUND));
     }
@@ -94,7 +94,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
             log.error("Ce codeFiscal n'existe pas !");
             return null;
         }
-        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseByMail(codeFiscal);
+        Optional<Entreprise> entreprise = entrepriseRepository.findEntrepriseBycodeFiscal(codeFiscal);
         return Optional.of(EntrepriseDto.fromEntity(entreprise.get())).orElseThrow(() -> new EntityNotFoundException
                 ("L'entreprise ayant l'email: "+codeFiscal+" n'existe pas !",ErrorCodes.ENTREPRISE_NOT_FOUND));
     }
